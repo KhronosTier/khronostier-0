@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+}
+
+.bg-wrapper {
+    position: relative;          /* Referência para o pseudo-elemento */
+    background-color: transparent;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.bg-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;                  /* Estica até a borda inferior do .bg-wrapper */
+    background-image: url('../img/Gold_Marble.png');
+    background-repeat: repeat;   /* Mantém a repetição */
+    background-size: auto;       /* Tamanho original da imagem */
+    filter: blur(2.5px);           /* Ajuste o blur como quiser */
+    z-index: -1;
+    pointer-events: none;
+}
+
+.area-1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-logo {
+    margin-top: 4vh;
+    width: clamp(200px, 90vw, 630px);
+    height: auto;
+}
+
+.org-name {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(1rem, 13.5vw, 8rem);
+    color: white;
+    text-align: center;
+    margin-bottom: 1vh;
+}
+
+.org-name-highlight {
+    color: red; /* Dourado */
+}
+
+.org-slogan {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(1rem, 1.vw, 8rem);
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+.coming-soon {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(1rem, 5vw, 4rem);
+    color: white;
+    text-align: center;
+    margin-top: 80vh;
+    margin-bottom: 80vh;
+}
+
+.site-footer {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 3rem 1rem;
+    margin-top: auto;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid #333;
+    font-size: 0.9rem;
+}
